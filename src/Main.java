@@ -40,14 +40,31 @@ public class Main {
                     break;
 
                 case 5:
+                    capicua();
+                    break;
 
                 case 6:
+                    morseatexto();
+                    break;
 
                 case 7:
+                    //textoamorse();
+                    break;
 
                 case 8:
+                    //gestorcaballeros();
+                    break;
+
+                case 9:
+                    //juegolibre();
+                    break;
 
                 case 0:
+                    System.out.println(name + ", hasta luego");
+                    break;
+                default:
+                    System.out.println(name + ", la opción que ingresó no es válida, inténtelo de nuevo");
+
 
             }
 
@@ -248,7 +265,118 @@ public class Main {
             System.out.println(name + ", " + palabra + " no es una palabra palíndromo.");
         }
     }
+    public static void capicua(){
+        leer = new Scanner(System.in);
+
+        System.out.println(name + ", ingrese un número entero");
+        int numero = leer.nextInt();
+
+        if (capicua(numero)) {
+            System.out.println( name + ", " + numero + " es un número capicúa.");
+        } else {
+            System.out.println(name + ", " + numero + " no es un número capicúa.");
+        }
     }
+    public static boolean capicua(int numero) {int numerooriginal = numero;
+        int invertido = 0;
+        while (numero > 0) {
+            int digito = numero % 10;
+            invertido = invertido * 10 + digito;
+            numero = numero / 10;
+        }
+        return numerooriginal == invertido;
+    }
+    public static void morseatexto() {
+        System.out.println(name + ", ingresa el texto en código Morse. Se recomienda el uso de slash (/) para separar las palabras");
+        String morse = leer.nextLine();
+
+        if (morse.length() == 0) {
+            morse = leer.nextLine();
+        }
+
+        String resultado = "";
+        String codigo = "";
+        int i = 0;
+
+        while (i < morse.length()) {
+            char m = morse.charAt(i);
+
+            if (m == ' ') {
+                if (codigo.length() > 0) {
+                    resultado = resultado + morse(codigo);
+                    codigo = "";
+                }
+            } else {
+                if (m == '/') {
+                    if (codigo.length() > 0) {
+                        resultado = resultado + morse(codigo);
+                        codigo = "";
+                    }
+                    resultado = resultado + " ";
+                } else {
+                    codigo = codigo + m;
+                }
+            }
+
+            if (i == morse.length() - 1) {
+                if (codigo.length() > 0) {
+                    resultado = resultado + morse(codigo);
+                }
+            }
+
+            i = i + 1;
+        }
+
+        System.out.println(name + ", el texto traducido del código Morse es: " + resultado);
+    }
+
+    public static String morse(String codigo) {
+        String letra = "";
+
+        switch (codigo) {
+            case ".-": letra = "A"; break;
+            case "-...": letra = "B"; break;
+            case "-.-.": letra = "C"; break;
+            case "-..": letra = "D"; break;
+            case ".": letra = "E"; break;
+            case "..-.": letra = "F"; break;
+            case "--.": letra = "G"; break;
+            case "....": letra = "H"; break;
+            case "..": letra = "I"; break;
+            case ".---": letra = "J"; break;
+            case "-.-": letra = "K"; break;
+            case ".-..": letra = "L"; break;
+            case "--": letra = "M"; break;
+            case "-.": letra = "N"; break;
+            case "---": letra = "O"; break;
+            case ".--.": letra = "P"; break;
+            case "--.-": letra = "Q"; break;
+            case ".-.": letra = "R"; break;
+            case "...": letra = "S"; break;
+            case "-": letra = "T"; break;
+            case "..-": letra = "U"; break;
+            case "...-": letra = "V"; break;
+            case ".--": letra = "W"; break;
+            case "-..-": letra = "X"; break;
+            case "-.--": letra = "Y"; break;
+            case "--..": letra = "Z"; break;
+            case "-----": letra = "0"; break;
+            case ".----": letra = "1"; break;
+            case "..---": letra = "2"; break;
+            case "...--": letra = "3"; break;
+            case "....-": letra = "4"; break;
+            case ".....": letra = "5"; break;
+            case "-....": letra = "6"; break;
+            case "--...": letra = "7"; break;
+            case "---..": letra = "8"; break;
+            case "----.": letra = "9"; break;
+            default: letra = ""; break;
+        }
+
+        return letra;
+    }
+
+}
 
 
 
