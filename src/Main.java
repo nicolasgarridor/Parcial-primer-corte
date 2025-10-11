@@ -36,6 +36,8 @@ public class Main {
                     break;
 
                 case 4:
+                    palindromo();
+                    break;
 
                 case 5:
 
@@ -228,6 +230,22 @@ public class Main {
             System.out.println(name + ", " + numero + " es un número perfecto.");
         } else {
             System.out.println(name + ", " + numero + " no es un número perfecto.");
+        }
+    }
+    public static void palindromo(){
+        leer = new Scanner(System.in);
+        System.out.println(name + ", ingrese una palabra para validar si es palindromo");
+        String palabra = leer.nextLine();
+
+        String reves = "";
+        int i = palabra.length() - 1;
+        while (i >= 0) {
+            reves = reves + palabra.charAt(i);
+            i = i - 1;}
+        if (palabra.equals(reves)) {
+            System.out.println(name + ", " + palabra + " es una palabra palíndromo.");
+        } else {
+            System.out.println(name + ", " + palabra + " no es una palabra palíndromo.");
         }
     }
     }
