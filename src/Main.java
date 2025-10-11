@@ -32,7 +32,8 @@ public class Main {
                     break;
 
                 case 3:
-
+                    numeroperfecto();
+                    break;
 
                 case 4:
 
@@ -47,8 +48,8 @@ public class Main {
                 case 0:
 
             }
-            while (opcion > 0) ;
-        }
+
+        } while (opcion > 0) ;
     }
 
     public static void mayordeedad() {
@@ -214,7 +215,22 @@ public class Main {
 
             return resultado;
         }
+    public static void numeroperfecto(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(name + ", ingresa un número entero positivo ");
+        int numero = scanner.nextInt();
+        int sumaDivisores = 0;
+        for (int i = 1; i < numero; i++) {
+            if (numero % i == 0) {
+                sumaDivisores += i;}
+        }
+        if (sumaDivisores == numero) {
+            System.out.println(name + ", " + numero + " es un número perfecto.");
+        } else {
+            System.out.println(name + ", " + numero + " no es un número perfecto.");
+        }
     }
-}
+    }
+
 
 
