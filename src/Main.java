@@ -48,7 +48,7 @@ public class Main {
                     break;
 
                 case 7:
-                    //textoamorse();
+                    textomorse();
                     break;
 
                 case 8:
@@ -68,7 +68,7 @@ public class Main {
 
             }
 
-        } while (opcion > 0) ;
+        } while (opcion > 0);
     }
 
     public static void mayordeedad() {
@@ -82,166 +82,168 @@ public class Main {
         }
     }
 
-        public static void signozodiacal () {
-            System.out.println(name + ", ingresa tu dia de nacimiento");
-            int dia = leer.nextInt();
-            System.out.println(name + ", ingresa tu mes de nacimiento en numeros");
-            int mes = leer.nextInt();
-            String signozodiacal = signozodiacal2(dia, mes);
-            System.out.println(name + ", tu signo zodiacal es: " + signozodiacal);
-        }
+    public static void signozodiacal() {
+        System.out.println(name + ", ingresa tu dia de nacimiento");
+        int dia = leer.nextInt();
+        System.out.println(name + ", ingresa tu mes de nacimiento en numeros");
+        int mes = leer.nextInt();
+        String signozodiacal = signozodiacal2(dia, mes);
+        System.out.println(name + ", tu signo zodiacal es: " + signozodiacal);
+    }
 
-        public static String signozodiacal2( int dia, int mes){
-            String resultado = "fecha no valida";
-            if (mes >= 1) {
-                if (mes <= 12) {
+    public static String signozodiacal2(int dia, int mes) {
+        String resultado = "fecha no valida";
+        if (mes >= 1) {
+            if (mes <= 12) {
 
-                    if (dia >= 1) {
-                        if (dia <= 31) {
+                if (dia >= 1) {
+                    if (dia <= 31) {
 
-                            if (mes == 1) {
-                                if (dia <= 19) {
-                                    resultado = "Capricornio";
-                                }
-
-                                if (dia >= 20) {
-                                    resultado = "Acuario";
-                                }
+                        if (mes == 1) {
+                            if (dia <= 19) {
+                                resultado = "Capricornio";
                             }
 
-                            if (mes == 2) {
-                                if (dia <= 18) {
-                                    resultado = "Acuario";
-                                }
-
-                                if (dia >= 19) {
-                                    resultado = "Piscis";
-                                }
+                            if (dia >= 20) {
+                                resultado = "Acuario";
                             }
-
-                            if (mes == 3) {
-                                if (dia <= 20) {
-                                    resultado = "Piscis";
-                                }
-
-                                if (dia >= 21) {
-                                    resultado = "Aries";
-                                }
-                            }
-
-                            if (mes == 4) {
-                                if (dia <= 19) {
-                                    resultado = "Aries";
-                                }
-
-                                if (dia >= 20) {
-                                    resultado = "Tauro";
-                                }
-                            }
-
-                            if (mes == 5) {
-                                if (dia <= 20) {
-                                    resultado = "Tauro";
-                                }
-
-                                if (dia >= 21) {
-                                    resultado = "Geminis";
-                                }
-                            }
-
-                            if (mes == 6) {
-                                if (dia <= 20) {
-                                    resultado = "Geminis";
-                                }
-
-                                if (dia >= 21) {
-                                    resultado = "Cancer";
-                                }
-                            }
-
-                            if (mes == 7) {
-                                if (dia <= 22) {
-                                    resultado = "Cancer";
-                                }
-
-                                if (dia >= 23) {
-                                    resultado = "Leo";
-                                }
-                            }
-
-                            if (mes == 8) {
-                                if (dia <= 22) {
-                                    resultado = "Leo";
-                                }
-
-                                if (dia >= 23) {
-                                    resultado = "Virgo";
-                                }
-                            }
-
-                            if (mes == 9) {
-                                if (dia <= 22) {
-                                    resultado = "Virgo";
-                                }
-
-                                if (dia >= 23) {
-                                    resultado = "Libra";
-                                }
-                            }
-
-                            if (mes == 10) {
-                                if (dia <= 22) {
-                                    resultado = "Libra";
-                                }
-
-                                if (dia >= 23) {
-                                    resultado = "Escorpio";
-                                }
-                            }
-
-                            if (mes == 11) {
-                                if (dia <= 21) {
-                                    resultado = "Escorpio";
-                                }
-
-                                if (dia >= 22) {
-                                    resultado = "Sagitario";
-                                }
-                            }
-
-                            if (mes == 12) {
-                                if (dia <= 21) {
-                                    resultado = "Sagitario";
-                                }
-
-                                if (dia >= 22) {
-                                    resultado = "Capricornio";
-                                }
-                            }
-
-                        } else {
-                            resultado = "error, el dia que ingresaste es mayor a 31, intenta de nuevo";
                         }
+
+                        if (mes == 2) {
+                            if (dia <= 18) {
+                                resultado = "Acuario";
+                            }
+
+                            if (dia >= 19) {
+                                resultado = "Piscis";
+                            }
+                        }
+
+                        if (mes == 3) {
+                            if (dia <= 20) {
+                                resultado = "Piscis";
+                            }
+
+                            if (dia >= 21) {
+                                resultado = "Aries";
+                            }
+                        }
+
+                        if (mes == 4) {
+                            if (dia <= 19) {
+                                resultado = "Aries";
+                            }
+
+                            if (dia >= 20) {
+                                resultado = "Tauro";
+                            }
+                        }
+
+                        if (mes == 5) {
+                            if (dia <= 20) {
+                                resultado = "Tauro";
+                            }
+
+                            if (dia >= 21) {
+                                resultado = "Geminis";
+                            }
+                        }
+
+                        if (mes == 6) {
+                            if (dia <= 20) {
+                                resultado = "Geminis";
+                            }
+
+                            if (dia >= 21) {
+                                resultado = "Cancer";
+                            }
+                        }
+
+                        if (mes == 7) {
+                            if (dia <= 22) {
+                                resultado = "Cancer";
+                            }
+
+                            if (dia >= 23) {
+                                resultado = "Leo";
+                            }
+                        }
+
+                        if (mes == 8) {
+                            if (dia <= 22) {
+                                resultado = "Leo";
+                            }
+
+                            if (dia >= 23) {
+                                resultado = "Virgo";
+                            }
+                        }
+
+                        if (mes == 9) {
+                            if (dia <= 22) {
+                                resultado = "Virgo";
+                            }
+
+                            if (dia >= 23) {
+                                resultado = "Libra";
+                            }
+                        }
+
+                        if (mes == 10) {
+                            if (dia <= 22) {
+                                resultado = "Libra";
+                            }
+
+                            if (dia >= 23) {
+                                resultado = "Escorpio";
+                            }
+                        }
+
+                        if (mes == 11) {
+                            if (dia <= 21) {
+                                resultado = "Escorpio";
+                            }
+
+                            if (dia >= 22) {
+                                resultado = "Sagitario";
+                            }
+                        }
+
+                        if (mes == 12) {
+                            if (dia <= 21) {
+                                resultado = "Sagitario";
+                            }
+
+                            if (dia >= 22) {
+                                resultado = "Capricornio";
+                            }
+                        }
+
                     } else {
-                        resultado = "error, el dia que ingresaste es menor a 1, intenta de nuevo";
+                        resultado = "error, el dia que ingresaste es mayor a 31, intenta de nuevo";
                     }
                 } else {
-                    resultado = "error, el mes que ingresaste es mayor que 12, intenta de nuevo";
+                    resultado = "error, el dia que ingresaste es menor a 1, intenta de nuevo";
                 }
             } else {
-                resultado = "error, el mes que ingresaste es menor que 1, intenta de nuevo";
+                resultado = "error, el mes que ingresaste es mayor que 12, intenta de nuevo";
             }
-
-            return resultado;
+        } else {
+            resultado = "error, el mes que ingresaste es menor que 1, intenta de nuevo";
         }
-    public static void numeroperfecto(){
+
+        return resultado;
+    }
+
+    public static void numeroperfecto() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(name + ", ingresa un número entero positivo ");
         int numero = scanner.nextInt();
         int sumaDivisores = 0;
         for (int i = 1; i < numero; i++) {
             if (numero % i == 0) {
-                sumaDivisores += i;}
+                sumaDivisores += i;
+            }
         }
         if (sumaDivisores == numero) {
             System.out.println(name + ", " + numero + " es un número perfecto.");
@@ -249,7 +251,8 @@ public class Main {
             System.out.println(name + ", " + numero + " no es un número perfecto.");
         }
     }
-    public static void palindromo(){
+
+    public static void palindromo() {
         leer = new Scanner(System.in);
         System.out.println(name + ", ingrese una palabra para validar si es palindromo");
         String palabra = leer.nextLine();
@@ -258,26 +261,30 @@ public class Main {
         int i = palabra.length() - 1;
         while (i >= 0) {
             reves = reves + palabra.charAt(i);
-            i = i - 1;}
+            i = i - 1;
+        }
         if (palabra.equals(reves)) {
             System.out.println(name + ", " + palabra + " es una palabra palíndromo.");
         } else {
             System.out.println(name + ", " + palabra + " no es una palabra palíndromo.");
         }
     }
-    public static void capicua(){
+
+    public static void capicua() {
         leer = new Scanner(System.in);
 
         System.out.println(name + ", ingrese un número entero");
         int numero = leer.nextInt();
 
         if (capicua(numero)) {
-            System.out.println( name + ", " + numero + " es un número capicúa.");
+            System.out.println(name + ", " + numero + " es un número capicúa.");
         } else {
             System.out.println(name + ", " + numero + " no es un número capicúa.");
         }
     }
-    public static boolean capicua(int numero) {int numerooriginal = numero;
+
+    public static boolean capicua(int numero) {
+        int numerooriginal = numero;
         int invertido = 0;
         while (numero > 0) {
             int digito = numero % 10;
@@ -286,8 +293,9 @@ public class Main {
         }
         return numerooriginal == invertido;
     }
+
     public static void morseatexto() {
-        System.out.println(name + ", ingresa el texto en código Morse. Se recomienda el uso de slash (/) para separar las letras.");
+        System.out.println(name + ", ingresa el texto en código Morse. Se recomienda el uso de slash (/) para separar las palabras.");
         String morse = leer.nextLine();
 
         if (morse.length() == 0) {
@@ -434,9 +442,11 @@ public class Main {
                 letra = "6";
                 break;
             case "--...":
-                letra = "7"; break;
-            case "---..": letra = "8";
-            break;
+                letra = "7";
+                break;
+            case "---..":
+                letra = "8";
+                break;
             case "----.":
                 letra = "9";
                 break;
@@ -446,6 +456,155 @@ public class Main {
         }
 
         return letra;
+    }
+
+    public static void textomorse() {
+        System.out.println(name + ", ingresa el texto que deseas convertir a código Morse.");
+        String texto = leer.nextLine();
+
+        if (texto.length() == 0) {
+            texto = leer.nextLine();
+        }
+
+        texto = texto.toUpperCase();
+
+        String resultado = "";
+        int i = 0;
+
+        while (i < texto.length()) {
+            char letra = texto.charAt(i);
+
+            if (letra == ' ') {
+                resultado = resultado + "/ ";
+            } else {
+                resultado = resultado + letraMorse(letra) + " ";
+            }
+
+            i = i + 1;
+        }
+
+        System.out.println(name + ", el texto en código Morse es:");
+        System.out.println(resultado);
+    }
+
+    public static String letraMorse(char letra) {
+        String codigo = "";
+
+        switch (letra) {
+            case 'A':
+                codigo = ".-";
+                break;
+            case 'B':
+                codigo = "-...";
+                break;
+            case 'C':
+                codigo = "-.-.";
+                break;
+            case 'D':
+                codigo = "-..";
+                break;
+            case 'E':
+                codigo = ".";
+                break;
+            case 'F':
+                codigo = "..-.";
+                break;
+            case 'G':
+                codigo = "--.";
+                break;
+            case 'H':
+                codigo = "....";
+                break;
+            case 'I':
+                codigo = "..";
+                break;
+            case 'J':
+                codigo = ".---";
+                break;
+            case 'K':
+                codigo = "-.-";
+                break;
+            case 'L':
+                codigo = ".-..";
+                break;
+            case 'M':
+                codigo = "--";
+                break;
+            case 'N':
+                codigo = "-.";
+                break;
+            case 'O':
+                codigo = "---";
+                break;
+            case 'P':
+                codigo = ".--.";
+                break;
+            case 'Q':
+                codigo = "--.-";
+                break;
+            case 'R':
+                codigo = ".-.";
+                break;
+            case 'S':
+                codigo = "...";
+                break;
+            case 'T':
+                codigo = "-";
+                break;
+            case 'U':
+                codigo = "..-";
+                break;
+            case 'V':
+                codigo = "...-";
+                break;
+            case 'W':
+                codigo = ".--";
+                break;
+            case 'X':
+                codigo = "-..-";
+                break;
+            case 'Y':
+                codigo = "-.--";
+                break;
+            case 'Z':
+                codigo = "--..";
+                break;
+            case '0':
+                codigo = "-----";
+                break;
+            case '1':
+                codigo = ".----";
+                break;
+            case '2':
+                codigo = "..---";
+                break;
+            case '3':
+                codigo = "...--";
+                break;
+            case '4':
+                codigo = "....-";
+                break;
+            case '5':
+                codigo = ".....";
+                break;
+            case '6':
+                codigo = "-....";
+                break;
+            case '7':
+                codigo = "--...";
+                break;
+            case '8':
+                codigo = "---..";
+                break;
+            case '9':
+                codigo = "----.";
+                break;
+            default:
+                codigo = "";
+                break;
+        }
+
+        return codigo;
     }
 
 }
