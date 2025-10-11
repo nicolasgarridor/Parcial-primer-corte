@@ -287,7 +287,7 @@ public class Main {
         return numerooriginal == invertido;
     }
     public static void morseatexto() {
-        System.out.println(name + ", ingresa el texto en código Morse. Se recomienda el uso de slash (/) para separar las palabras");
+        System.out.println(name + ", ingresa el texto en código Morse. Se recomienda el uso de slash (/) para separar las letras.");
         String morse = leer.nextLine();
 
         if (morse.length() == 0) {
@@ -334,43 +334,115 @@ public class Main {
         String letra = "";
 
         switch (codigo) {
-            case ".-": letra = "A"; break;
-            case "-...": letra = "B"; break;
-            case "-.-.": letra = "C"; break;
-            case "-..": letra = "D"; break;
-            case ".": letra = "E"; break;
-            case "..-.": letra = "F"; break;
-            case "--.": letra = "G"; break;
-            case "....": letra = "H"; break;
-            case "..": letra = "I"; break;
-            case ".---": letra = "J"; break;
-            case "-.-": letra = "K"; break;
-            case ".-..": letra = "L"; break;
-            case "--": letra = "M"; break;
-            case "-.": letra = "N"; break;
-            case "---": letra = "O"; break;
-            case ".--.": letra = "P"; break;
-            case "--.-": letra = "Q"; break;
-            case ".-.": letra = "R"; break;
-            case "...": letra = "S"; break;
-            case "-": letra = "T"; break;
-            case "..-": letra = "U"; break;
-            case "...-": letra = "V"; break;
-            case ".--": letra = "W"; break;
-            case "-..-": letra = "X"; break;
-            case "-.--": letra = "Y"; break;
-            case "--..": letra = "Z"; break;
-            case "-----": letra = "0"; break;
-            case ".----": letra = "1"; break;
-            case "..---": letra = "2"; break;
-            case "...--": letra = "3"; break;
-            case "....-": letra = "4"; break;
-            case ".....": letra = "5"; break;
-            case "-....": letra = "6"; break;
-            case "--...": letra = "7"; break;
-            case "---..": letra = "8"; break;
-            case "----.": letra = "9"; break;
-            default: letra = ""; break;
+            case ".-":
+                letra = "A";
+                break;
+            case "-...":
+                letra = "B";
+                break;
+            case "-.-.":
+                letra = "C";
+                break;
+            case "-..":
+                letra = "D";
+                break;
+            case ".":
+                letra = "E";
+                break;
+            case "..-.":
+                letra = "F";
+                break;
+            case "--.":
+                letra = "G";
+                break;
+            case "....":
+                letra = "H";
+                break;
+            case "..":
+                letra = "I";
+                break;
+            case ".---":
+                letra = "J";
+                break;
+            case "-.-":
+                letra = "K";
+                break;
+            case ".-..":
+                letra = "L";
+                break;
+            case "--":
+                letra = "M";
+                break;
+            case "-.":
+                letra = "N";
+                break;
+            case "---":
+                letra = "O";
+                break;
+            case ".--.":
+                letra = "P";
+                break;
+            case "--.-":
+                letra = "Q";
+                break;
+            case ".-.":
+                letra = "R";
+                break;
+            case "...":
+                letra = "S";
+                break;
+            case "-":
+                letra = "T";
+                break;
+            case "..-":
+                letra = "U";
+                break;
+            case "...-":
+                letra = "V";
+                break;
+            case ".--":
+                letra = "W";
+                break;
+            case "-..-":
+                letra = "X";
+                break;
+            case "-.--":
+                letra = "Y";
+                break;
+            case "--..":
+                letra = "Z";
+                break;
+            case "-----":
+                letra = "0";
+                break;
+            case ".----":
+                letra = "1";
+                break;
+            case "..---":
+                letra = "2";
+                break;
+            case "...--":
+                letra = "3";
+                break;
+            case "....-":
+                letra = "4";
+                break;
+            case ".....":
+                letra = "5";
+                break;
+            case "-....":
+                letra = "6";
+                break;
+            case "--...":
+                letra = "7"; break;
+            case "---..": letra = "8";
+            break;
+            case "----.":
+                letra = "9";
+                break;
+            default:
+                letra = "";
+                break;
         }
 
         return letra;
