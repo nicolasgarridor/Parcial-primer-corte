@@ -14,7 +14,9 @@ public class Armadura {
     public Armadura() {
         this("Desconocida", "Desconocido", "Sin rango");
     }
+
     @Override
     public String toString() {
         return "Armadura de " + rango + " llamada " + nombre + " (" + material + ")";
-    }}
+    }
+}

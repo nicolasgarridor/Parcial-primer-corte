@@ -662,6 +662,7 @@ public class Main {
         System.out.println(name + " Juego terminado.");
         System.out.println(name + " tu puntaje final fue: " + puntaje);
 
-    }}
+    }
+}
 
 
