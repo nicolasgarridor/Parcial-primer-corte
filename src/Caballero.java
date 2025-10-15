@@ -10,7 +10,7 @@ public class Caballero {
         this.constelacion = constelacion;
         this.orden = orden;
         this.armadura = armadura;
-        this.cosmos = 100;
+        this.cosmos = (int)(Math.random() * 100) + 50; ;
     }
 
     public Caballero() {

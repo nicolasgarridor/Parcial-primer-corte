@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
+
 public class Maincaballeros {
 
-
+    public static Random random = new Random();
     static Scanner leer = new Scanner(System.in);
     static ArrayList<Caballero> caballeros = new ArrayList<>();
 
@@ -13,11 +15,12 @@ public class Maincaballeros {
             System.out.println("1. Crear caballero");
             System.out.println("2. Mostrar caballeros registrados");
             System.out.println("3. Eliminar caballero");
+            System.out.println("4. Batalla");
             System.out.println("0. Volver al menú principal");
             System.out.print("Seleccione una opción: ");
 
-           opcion = leer.nextInt();
-           leer.nextLine();
+            opcion = leer.nextInt();
+            leer.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -28,6 +31,9 @@ public class Maincaballeros {
                     break;
                 case 3:
                     eliminarCaballero();
+                    break;
+                case 4:
+                    Batalla();
                     break;
                 case 0:
                     System.out.println("Volviendo al menú principal...");
@@ -50,7 +56,7 @@ public class Maincaballeros {
         String rango = leer.nextLine().toLowerCase();
 
         Armadura armadura;
-        if (rango == "oro") {
+        if (rango.equals("oro")) {
             armadura = new Armaduraoro(constelacion, "Oro");
         } else {
             armadura = new Armadurabronce(constelacion, "Bronce");
@@ -62,7 +68,7 @@ public class Maincaballeros {
     }
 
     private static void mostrarCaballeros() {
-        if (caballeros==null) {
+        if (caballeros.isEmpty()) {
             System.out.println("No hay caballeros registrados.");
         } else {
             System.out.println("\nSe imprimirán los caballeros registrados");
@@ -73,7 +79,7 @@ public class Maincaballeros {
     }
 
     private static void eliminarCaballero() {
-        if (caballeros==null) {
+        if (caballeros.isEmpty()) {
             System.out.println("No hay caballeros para eliminar.");
             return;
         }
@@ -86,5 +92,51 @@ public class Maincaballeros {
         } else {
             System.out.println("No se encontró un caballero con ese nombre.");
         }
+    }
+
+    public static void Batalla() {
+        if (caballeros.size() < 2) {
+            System.out.println("Ingrese más caballeros para iniciar una batalla.");
+            return;
+        }
+
+        Caballero c1 = caballeros.get(random.nextInt(caballeros.size()));
+        Caballero c2;
+        do {
+            c2 = caballeros.get(random.nextInt(caballeros.size()));
+        } while (c1 == c2);
+
+        System.out.println("¡¡Batalla!!");
+        System.out.println(c1.nombre + " (" + c1.armadura.rango + ") VS " + c2.nombre + " (" + c2.armadura.rango + ")");
+        System.out.println("¡¡FIGHT!!");
+
+        int poder1 = calcularPoder(c1);
+        int poder2 = calcularPoder(c2);
+
+        if (poder1 > poder2) {
+            System.out.println(c1.nombre + " ha ganado la batalla,");
+        } else if (poder2 > poder1) {
+            System.out.println(c2.nombre + " ha ganado la batalla");
+        } else {
+            System.out.println("¡¡Empate!!");
+        }
+    }
+
+    public static int calcularPoder(Caballero c) {
+        int bonusRango;
+        String rango = c.armadura.rango.toLowerCase();
+
+        if (rango.equals("oro")) {
+            bonusRango = 50;
+        } else if (rango.equals("plata")) {
+            bonusRango = 30;
+        } else if (rango.equals("bronce")) {
+            bonusRango = 10;
+        } else {
+            bonusRango = 0;
+        }
+
+        int azar = random.nextInt(30);
+        return c.cosmos + bonusRango + azar;
     }
 }
