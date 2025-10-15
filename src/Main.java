@@ -6,69 +6,66 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Bienvenido, a continuación ingrese su nombre");
-        Scanner leer = new Scanner(System.in);
         name = leer.nextLine();
+
         int opcion;
 
         do {
             System.out.println(name + ", seleccione una opción para mostrar : \n" +
                     "1. Zodiaco por mes y año de nacimiento\n" +
                     "2. Validador de mayoría de edad\n" +
-                    "3. Validador numero perfecto\n" +
+                    "3. Validador número perfecto\n" +
                     "4. Validador de palíndromo\n" +
-                    "5. Validador de capicua\n" +
+                    "5. Validador de capicúa\n" +
                     "6. Conversor de morse a texto\n" +
                     "7. Conversor de texto a morse\n" +
                     "8. Gestor de caballeros del zodíaco\n" +
+                    "9. Juego libre\n" +
                     "0. Salir del menú");
-            opcion = leer.nextInt();
+
+            if (leer.hasNextInt()) {
+                opcion = leer.nextInt();
+            } else {
+                leer.next();
+                opcion = -1;
+            }
+
             switch (opcion) {
                 case 1:
                     signozodiacal();
                     break;
-
                 case 2:
                     mayordeedad();
                     break;
-
                 case 3:
                     numeroperfecto();
                     break;
-
                 case 4:
                     palindromo();
                     break;
-
                 case 5:
                     capicua();
                     break;
-
                 case 6:
                     morseatexto();
                     break;
-
                 case 7:
                     textomorse();
                     break;
-
                 case 8:
-                    //gestorcaballeros();
+                    // gestorcaballeros();
                     break;
-
                 case 9:
-                    //juegolibre();
+                    juegolibre();
                     break;
-
                 case 0:
                     System.out.println(name + ", hasta luego");
                     break;
                 default:
                     System.out.println(name + ", la opción que ingresó no es válida, inténtelo de nuevo");
-
-
             }
 
-        } while (opcion > 0);
+        } while (opcion != 0);
     }
 
     public static void mayordeedad() {
@@ -603,11 +600,68 @@ public class Main {
                 codigo = "";
                 break;
         }
-
         return codigo;
     }
+        public static void juegolibre () {
+            System.out.println(name + ", adivina la operación");
+            System.out.println("- Se te mostrarán operaciones aleatorias.\n" +
+                    "- Se sumará al puntaje 10 puntos cada que se acierte una respuesta.\n" +
+                    "- Cada falla será motivo para quitar una vida, iniciará con 3 vidas");
 
-}
+            int vidas = 3;
+            int puntaje = 0;
+            int ronda = 1;
+
+            while (vidas > 0) {
+                int numero1 = (int) (Math.random() * 10) + 1;
+                int numero2 = (int) (Math.random() * 10) + 1;
+                int operacion = (int) (Math.random() * 4) + 1;
+                int resultadoCorrecto = 0;
+                String operacionstring = "";
+
+                if (operacion == 1) {
+                    resultadoCorrecto = numero1 + numero2;
+                    operacionstring = numero1 + " + " + numero2;
+                } else {
+                    if (operacion == 2) {
+                        resultadoCorrecto = numero1 - numero2;
+                        operacionstring = numero1 + " - " + numero2;
+                    } else {
+                        if (operacion == 3) {
+                            resultadoCorrecto = numero1 * numero2;
+                            operacionstring = numero1 + " × " + numero2;
+                        } else {
+                            while (numero1 % numero2 != 0) {
+                                numero1 = (int) (Math.random() * 10) + 1;
+                                numero2 = (int) (Math.random() * 9) + 1;
+                            }
+                            resultadoCorrecto = numero1 / numero2;
+                            operacionstring = numero1 + " ÷ " + numero2;
+                        }
+                    }
+                }
+
+                System.out.println("\nRonda " + ronda + ":");
+                System.out.println("¿Cuál es el resultado de la siguiente operación?");
+                System.out.println(operacionstring);
+                int respuesta = leer.nextInt();
+
+                if (respuesta == resultadoCorrecto) {
+                    System.out.println("Correcto, haz ganado 10 puntos");
+                    puntaje = puntaje + 10;
+                } else {
+                    System.out.println("Incorrecto. La respuesta correcta es: " + resultadoCorrecto + " .Pierdes una vida :(");
+                    vidas = vidas - 1;
+                }
+
+                System.out.println(name + " tu puntaje actual es: " + puntaje + " y tus vidas restantes son: " + vidas);
+                ronda = ronda + 1;
+            }
+
+            System.out.println(name + " Juego terminado.");
+            System.out.println(name + " tu puntaje final fue: " + puntaje);
+        }
+    }
 
 
 
