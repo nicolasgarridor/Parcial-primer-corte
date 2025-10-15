@@ -9,4 +9,5 @@ public class Armadurabronce extends Armadura {
     @Override
     public String toString() {
         return super.toString() + " con el símbolo de " + simbolo;
-    }}
+    }
+}
