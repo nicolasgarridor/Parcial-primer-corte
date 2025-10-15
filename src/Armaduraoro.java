@@ -9,4 +9,5 @@ public class Armaduraoro extends Armadura {
     @Override
     public String toString() {
         return super.toString() + " correspondiente al signo de " + signoZodiacal;
-    }}
+    }
+}

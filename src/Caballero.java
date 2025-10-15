@@ -29,5 +29,4 @@ public class Caballero {
 
     public void aumentarCosmos(int cantidad) {
         cosmos += cantidad;
-    }
-}
+    }}

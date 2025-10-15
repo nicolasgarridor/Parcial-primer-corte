@@ -18,5 +18,4 @@ public class Armadura {
     @Override
     public String toString() {
         return "Armadura de " + rango + " llamada " + nombre + " (" + material + ")";
-    }
-}
+}}
