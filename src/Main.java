@@ -260,7 +260,7 @@ public class Main {
             reves = reves + palabra.charAt(i);
             i = i - 1;
         }
-        if (palabra.equals(reves)) {
+        if (palabra == reves) {
             System.out.println(name + ", " + palabra + " es una palabra palíndromo.");
         } else {
             System.out.println(name + ", " + palabra + " no es una palabra palíndromo.");
@@ -270,25 +270,21 @@ public class Main {
     public static void capicua() {
         leer = new Scanner(System.in);
 
-        System.out.println(name + ", ingrese un número entero");
+        System.out.println(name + ", ingrese un número entero para validar si es capicúa");
         int numero = leer.nextInt();
-
-        if (capicua(numero)) {
-            System.out.println(name + ", " + numero + " es un número capicúa.");
-        } else {
-            System.out.println(name + ", " + numero + " no es un número capicúa.");
-        }
-    }
-
-    public static boolean capicua(int numero) {
-        int numerooriginal = numero;
+        int numeroOriginal = numero;
         int invertido = 0;
         while (numero > 0) {
             int digito = numero % 10;
             invertido = invertido * 10 + digito;
             numero = numero / 10;
         }
-        return numerooriginal == invertido;
+        if (numeroOriginal == invertido) {
+            System.out.println(name + ", " + numeroOriginal + " es un número capicúa.");
+        } else {
+            System.out.println(name + ", " + numeroOriginal + " no es un número capicúa.");
+        }
+
     }
 
     public static void morseatexto() {
