@@ -1,24 +1,27 @@
 import java.util.ArrayList;
 
 public class Gestor {
-    private ArrayList<Caballero> caballeros = new ArrayList<>();
+    private static ArrayList<Caballero> caballeros = new ArrayList<>();
 
-    public void agregar(Caballero c) {
+    public static void agregar(Caballero c) {
         caballeros.add(c);
+        System.out.println("Caballero agregado: " + c.nombre);
     }
 
-    public void mostrar() {
+    public static void mostrar() {
         if (caballeros.isEmpty()) {
             System.out.println("No hay caballeros registrados aún.");
         } else {
-            System.out.println("Caballeros registrados:");
+            System.out.println("\n--- CABALLEROS REGISTRADOS ---");
             for (Caballero c : caballeros) {
                 System.out.println(c);
             }
         }
     }
 
-    public void eliminarCaballero(String nombre) {
+    public static void eliminarCaballero(String nombre) {
         caballeros.removeIf(c -> c.nombre.equalsIgnoreCase(nombre));
+        System.out.println("Caballero " + nombre + " eliminado del registro.");
     }
 }
+

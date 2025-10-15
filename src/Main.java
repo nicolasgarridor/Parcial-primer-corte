@@ -53,7 +53,7 @@ public class Main {
                     textomorse();
                     break;
                 case 8:
-                    // gestorcaballeros();
+                    Maincaballeros.iniciar();
                     break;
                 case 9:
                     juegolibre();
@@ -600,6 +600,7 @@ public class Main {
                 codigo = "";
                 break;
         }
+
         return codigo;
     }
 
